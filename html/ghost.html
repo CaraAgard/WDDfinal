@@ -1,0 +1,93 @@
+<!doctype html>
+<html>  
+<head>  
+ 
+<style>  
+
+body {  
+    background-color: rgba(56, 20, 59, 0.8);
+    color:rgb(168, 168, 82);
+    margin-top: 20px;
+    text-align: center;
+}  
+button {
+    background-color: rgb(33, 20, 54);
+    color: cornsilk;
+    width: 80px;
+    height: 60px;
+}
+</style>   
+</head>  
+  
+<script>  
+function displayGhosts()   
+{   
+   var ghostList = [  
+   {   
+   
+     src: "https://i.postimg.cc/057XGXSJ/wdr2.jpg",   
+     width: "450",  height: "300"  
+   },   
+   {  
+   
+     src: "https://i.postimg.cc/6q79gJNw/ps.jpg",  
+     width: "450",  height: "300"  
+   },   
+   {  
+  
+     src: "https://i.postimg.cc/rFxdwWvT/drd.jpg", 
+     width: "450",  height: "300"  
+     
+   },  
+   {  
+    
+     src: "https://i.postimg.cc/tTsJQVhL/ed.jpg", 
+     width: "450",  height: "300"  
+    } ];  
+      
+
+    var photoLength = ghostList.length;  
+    var newLength = [];  
+    for (var i = 0; i < photoLength; i++) {  
+        newLength[i] = new Image();  
+        newLength[i].src = ghostList[i].src;  
+        newLength[i].width = ghostList[i].width;  
+        newLength[i].height = ghostList[i].height;  
+    }  
+     
+  
+  function randomNumber(min, max)   
+  {    
+      randm = Math.floor(Math.random() * (max - min + 1)) + min;  
+      return newLength[randm];  
+  }     
+  var newImage = randomNumber(0, newLength.length - 1);   
+  var images = document.getElementsByTagName('img');  
+  var l = images.length;  
+  for (var p = 0; p < l; p++) {  
+     images[0].parentNode.removeChild(images[0]);  
+  }    
+  document.body.appendChild(newImage);  
+}  
+</script>  
+  
+<body>  
+    <header>
+        <h1>
+            <h3><a href="C:/Users/caraa/Desktop/WDDfinal/html/index.html">Home</a></h3>
+            A ghost is behind you!
+        </h1>
+    </header>
+    <main>
+       
+        <h2>
+            Click on the button below to see which one.
+        </h2>
+        <p>
+            There may be more than one.  Click again!
+        </p>
+        <button onclick="displayGhosts();"> Ghosts! </button><br><br><br><br>
+    </main>       
+ 
+</body>  
+</html>  
